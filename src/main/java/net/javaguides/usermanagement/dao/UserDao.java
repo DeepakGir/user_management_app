@@ -61,10 +61,11 @@ public class UserDao {
             ResultSet rs = preparedStatement.executeQuery();
 
             if (rs.next()) {
+               int sr = id;
                 String name = rs.getString("name");
                 String email = rs.getString("email");
                 String country = rs.getString("country");
-                user = new User(id, name, email, country);
+                user = new User(id, name, email, country,sr);
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -78,13 +79,14 @@ public class UserDao {
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS)) {
             System.out.println("Executing SELECT_ALL_USERS: " + preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
-
+            int sr = 1;
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
                 String email = rs.getString("email");
                 String country = rs.getString("country");
-                users.add(new User(id, name, email, country));
+                users.add(new User(id, name, email, country , sr));
+                sr++;
             }
         } catch (SQLException e) {
             printSQLException(e);

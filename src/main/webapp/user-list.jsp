@@ -39,7 +39,7 @@
                         for (User user : list) {
                 %>
                     <tr>
-                        <td><%= user.getId() %></td>
+                        <td><%= user.getSr() %></td>
                         <td><%= user.getName() %></td>
                         <td><%= user.getEmail() %></td>
                         <td><%= user.getCountry() %></td>

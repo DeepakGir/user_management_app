@@ -5,13 +5,15 @@
         private String name;
         private String email;
         private String country;
+        private int sr ;
 
         // Constructor with ID (used for updates)
-        public User(int id, String name, String email, String country) {
+        public User(int id, String name, String email, String country , int sr) {
             this.id = id;
             this.name = name;
             this.email = email;
             this.country = country;
+            this.sr = sr;
         }
 
         // Constructor without ID (used for inserts)
@@ -25,6 +27,10 @@
         public int getId() {
             return id;
         }
+        public int getSr(){
+            return sr;
+        }
+
 
         public void setId(int id) {
             this.id = id;
